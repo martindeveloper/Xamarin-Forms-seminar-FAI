@@ -21,6 +21,7 @@ namespace App1.Models
 
         public void Delete(string task)
         {
+			// This sucks. Use list of entities and search by unique ID instead
             int index = TasksList.FindIndex((string value) => { return value == task; });
             TasksList.RemoveAt(index);
         }

@@ -19,10 +19,10 @@ namespace App1
             //return new MainPageTwoWayBindings();
 
             // Demo 3
-            //return new TodoPage();
+            return new TodoPage();
 
             // Demo 4
-            return new AnimationsPage();
+            //return new AnimationsPage();
         }
     }
 }

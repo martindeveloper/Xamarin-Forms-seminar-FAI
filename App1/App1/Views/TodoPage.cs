@@ -31,6 +31,7 @@ namespace App1.Views
                 VerticalOptions = LayoutOptions.Center
             };
 
+			// Add two-way binding to TodoViewModel.NewTaskDraft
             NewTaskEntry.SetBinding<TodoViewModel>(Entry.TextProperty, model => model.NewTaskDraft, BindingMode.TwoWay);
 
             AddTaskButton = new Button
@@ -66,6 +67,8 @@ namespace App1.Views
                 HorizontalOptions = LayoutOptions.FillAndExpand,
             };
 
+			// Add two-way binding to TodoViewModel.Tasks which is list of strings
+			// Whole ListView can be also filled using ObservableCollection, but purpose of this demo is two-way data binding
             TodoListView.SetBinding<TodoViewModel>(ListView.ItemsSourceProperty, model => model.Tasks, BindingMode.OneWay);
 
             TodoListView.ItemTapped += async (object target, ItemTappedEventArgs args) =>
@@ -89,6 +92,7 @@ namespace App1.Views
                     ClearTasksButton
                 },
 
+				// Set binding context for layout, also can be set for whole page
                 BindingContext = ViewModel
             };
 
